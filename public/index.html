@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buymium - Temporary Email Service</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="gradient-bg min-h-screen">
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">Buymium</h1>
+            <p class="subtitle">Temporary Email Service</p>
+        </header>
+
+        <main class="main">
+            <div class="email-form-container">
+                <form id="emailForm" class="email-form">
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="emailPrefix" 
+                            placeholder="Masukkan email"
+                            class="email-input"
+                            required
+                        >
+                        <span class="domain-text">@buymium.store</span>
+                        <button type="submit" class="go-button">
+                            <i class="fas fa-paper-plane"></i>
+                            GO
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="emailList" class="email-list" style="display: none;">
+                <div class="email-list-header">
+                    <h2 id="currentEmail">
+                        <i class="fas fa-envelope"></i>
+                        Email: <span id="emailAddress"></span>
+                    </h2>
+                    <button id="refreshButton" class="refresh-button">
+                        <i class="fas fa-sync-alt"></i>
+                        Refresh
+                    </button>
+                </div>
+                
+                <div id="loadingMessage" class="loading-message" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Mengambil email...</p>
+                </div>
+
+                <div id="noEmailsMessage" class="no-emails-message" style="display: none;">
+                    <i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.5;"></i>
+                    <p>Belum ada email yang diterima untuk alamat ini.</p>
+                    <p>Kirim email ke <span id="noEmailAddress"></span> untuk melihatnya di sini.</p>
+                </div>
+
+                <div id="emailsContainer" class="emails-container"></div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>
+                <i class="fas fa-shield-alt"></i>
+                &copy; 2024 Buymium. Email temporary akan expired sesuai kebijakan Mailgun.
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
