@@ -8,7 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e40af">
 </head>
+
 <body class="gradient-bg min-h-screen">
     <div class="container">
         <header class="header">
@@ -61,6 +64,138 @@
 
                 <div id="emailsContainer" class="emails-container"></div>
             </div>
+            <!-- New Content Section -->
+            <div class="content-section">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="feature-title">Mudah & Cepat</h3>
+                        <p class="feature-description">
+                            Buat email temporary dalam hitungan detik. Tidak perlu registrasi atau verifikasi.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Privasi Terjamin</h3>
+                        <p class="feature-description">
+                            Lindungi email asli Anda dari spam dan phishing. 100% anonim dan aman.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="usage-guide">
+                    <h2 class="usage-title">
+                        <i class="fas fa-question-circle"></i>
+                        Cara Menggunakan
+                    </h2>
+                    
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Buat Email Temporary</h4>
+                                <p>Masukkan nama yang diinginkan di kolom input, lalu klik tombol "GO"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Gunakan Email</h4>
+                                <p>Salin alamat email temporary yang telah dibuat dan gunakan untuk registrasi website atau layanan</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Terima Email</h4>
+                                <p>Semua email yang masuk akan otomatis muncul di halaman ini. Klik refresh untuk memperbarui</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefits-section">
+                    <h2 class="benefits-title">
+                        <i class="fas fa-star"></i>
+                        Keunggulan Buymium
+                    </h2>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="fas fa-user-secret"></i>
+                            <span>Tanpa Registrasi</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile Friendly</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-infinity"></i>
+                            <span>Unlimited Email</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-eye-slash"></i>
+                            <span>No Tracking</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>Real-time Inbox</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Global Access</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="use-cases">
+                    <h2 class="use-cases-title">
+                        <i class="fas fa-lightbulb"></i>
+                        Kapan Menggunakan Buymium?
+                    </h2>
+                    
+                    <div class="use-cases-grid">
+                        <div class="use-case-item">
+                            <i class="fas fa-download"></i>
+                            <div>
+                                <h4>Download File</h4>
+                                <p>Untuk mengunduh file yang memerlukan email verification</p>
+                            </div>
+                        </div>
+                        
+                        <div class="use-case-item">
+                            <i class="fas fa-user-plus"></i>
+                            <div>
+                                <h4>Trial Account</h4>
+                                <p>Membuat akun trial untuk testing aplikasi atau layanan</p>
+                            </div>
+                        </div>
+                        
+                        <div class="use-case-item">
+                            <i class="fas fa-newspaper"></i>
+                            <div>
+                                <h4>Newsletter</h4>
+                                <p>Subscribe newsletter tanpa khawatir spam di email utama</p>
+                            </div>
+                        </div>
+                        
+                        <div class="use-case-item">
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <h4>Forum & Comment</h4>
+                                <p>Registrasi di forum atau platform diskusi online</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <footer class="footer">
@@ -72,5 +207,12 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+    </script>
 </body>
 </html>

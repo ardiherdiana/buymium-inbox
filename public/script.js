@@ -81,14 +81,8 @@ class EmailService {
 
         try {
             
-            let fetchUrl;
-            if (window.location.port === '3000') {
-                // Jika di Node.js/Express, arahkan ke server PHP
-                fetchUrl = `http://localhost/buymium-inbox/public/php/get_emails.php?prefix=${this.currentPrefix}`;
-            } else {
-                // Jika di server PHP, gunakan path relatif
-                fetchUrl = `php/get_emails.php?prefix=${this.currentPrefix}`;
-            }
+            // Untuk hPanel Hostinger (file HTML sejajar dengan folder php):
+            const fetchUrl = `php/get_emails.php?prefix=${this.currentPrefix}`;
             const response = await fetch(fetchUrl);
             const data = await response.json();
 
@@ -176,12 +170,8 @@ class EmailService {
                 previewElement.textContent = 'Memuat isi lengkap...';
                 
                 try {
-                    let fetchUrl;
-                    if (window.location.port === '3000') {
-                        fetchUrl = `http://localhost/buymium-inbox/public/php/get_email_detail.php?messageId=${encodeURIComponent(email.id)}`;
-                    } else {
-                        fetchUrl = `php/get_email_detail.php?messageId=${encodeURIComponent(email.id)}`;
-                    }
+                    // Untuk hPanel Hostinger (file HTML sejajar dengan folder php):
+                    const fetchUrl = `php/get_email_detail.php?messageId=${encodeURIComponent(email.id)}`;
                     const response = await fetch(fetchUrl);
                     const data = await response.json();
 
